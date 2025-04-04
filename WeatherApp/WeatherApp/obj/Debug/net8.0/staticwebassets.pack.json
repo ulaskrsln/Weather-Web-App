@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\images\\antalya.png"
     },
     {
+      "Id": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\images\\berlin.png",
+      "PackagePath": "staticwebassets\\images\\berlin.png"
+    },
+    {
       "Id": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\images\\bursa.png",
       "PackagePath": "staticwebassets\\images\\bursa.png"
     },
@@ -33,8 +37,24 @@
       "PackagePath": "staticwebassets\\images\\izmir.png"
     },
     {
+      "Id": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\images\\london.png",
+      "PackagePath": "staticwebassets\\images\\london.png"
+    },
+    {
+      "Id": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\images\\moscow.png",
+      "PackagePath": "staticwebassets\\images\\moscow.png"
+    },
+    {
+      "Id": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\images\\paris.png",
+      "PackagePath": "staticwebassets\\images\\paris.png"
+    },
+    {
       "Id": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\images\\sun-solid.svg",
       "PackagePath": "staticwebassets\\images\\sun-solid.svg"
+    },
+    {
+      "Id": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\images\\washington.png",
+      "PackagePath": "staticwebassets\\images\\washington.png"
     },
     {
       "Id": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\js\\site.js",

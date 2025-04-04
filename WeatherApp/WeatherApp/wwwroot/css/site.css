@@ -45,7 +45,7 @@ body {
     .weather-result h2 {
         font-size: 24px;
         margin-bottom: 15px;
-        color: #3498db; 
+        color: #E74C3C;
     }
 
     .weather-result p {
@@ -56,12 +56,6 @@ body {
     .weather-result .temp {
         font-size: 36px;
         font-weight: bold;
-        color: #e67e22; /* Sýcaklýk rengi */
-    }
-
-    .weather-result .description {
-        font-size: 20px;
-        color: #8e44ad; /* Açýklama rengi */
     }
 
     .weather-result .icon {
@@ -217,3 +211,70 @@ header {
         line-height: 1.6;
         margin-bottom: 10px;
     }
+
+    .weather-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    transition: transform 0.2s ease-in-out; 
+
+    
+    flex: 1 1 150px; 
+    min-width: 130px; 
+    max-width: 200px; 
+
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.weather-card:hover {
+    transform: translateY(-5px); 
+}
+
+.weather-card .day-name {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    color: #2c3e50;
+}
+
+.weather-card .date {
+    font-size: 0.9em;
+    color: #7f8c8d;
+    margin-bottom: 15px;
+}
+
+
+
+.weather-card .temperature {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #34495e;
+}
+
+.weather-card .temp-high {
+  color: #e74c3c; /*Sýcak hava için kýrmýzý*/
+        }
+
+.weather-card .temp-low {
+    color: #3498db; /*Soðuk hava için mavi*/
+}
+
+.weather-card .weather-description {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 0;
+}
+
+.forecast-container {
+    display: flex; 
+    gap: 20px; 
+    justify-content: center; 
+    max-width: 1200px; 
+    margin: 0 auto;
+}

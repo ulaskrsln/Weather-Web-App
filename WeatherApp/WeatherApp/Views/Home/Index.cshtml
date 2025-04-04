@@ -1,59 +1,89 @@
 ﻿@{
-    ViewData["Title"] = "Hava Durumu Uygulaması";
+	ViewData["Title"] = "Hava Durumu Uygulaması";
 }
-<div id ="content">
-<h1>Hava Durumu Uygulaması</h1>
-<p>Lütfen bir şehir adı girin:</p>
+<div id="content">
+	<h1>Hava Durumu Uygulaması</h1>
+	<p>Lütfen bir şehir adı girin:</p>
 
-<input type="text" id="cityInput" placeholder="Şehir Adı">
-<button id="getWeatherBtn">Hava Durumu Getir</button>
+	<input type="text" id="cityInput" placeholder="Şehir Adı">
+	<button id="getWeatherBtn">Hava Durumu Getir</button>
 
-    <div id="weatherResult" class="weather-result"></div>
+	
+	<div id="weatherResult" class="weather-result">
+		<h2>Anlık Hava Durumu Bilgileri</h2>
+		<div class="location">
+			Şehir: <span id="city"></span>
+		</div>
+		<div class="temperature">
+			Sıcaklık: <span id="temperature"></span>
+		</div>
+		<div class="description">
+			Açıklama: <span id="description"></span>
+		</div>
+		<div class="coordinates">
+            <strong>Koordinatlar <br></strong>
+			Enlem: <span id="lat"></span>, Boylam: <span id="lon"></span>
+		</div>
 
-<script>
-    document.getElementById("getWeatherBtn").addEventListener("click", function() {
-        let city = document.getElementById("cityInput").value;
-        if (city) {
-            fetch(`/Home/GetWeather?city=${city}`)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById("weatherResult").innerHTML = data;
-                })
-                .catch(error => console.error('Hata:', error));
-        }
-    });
-</script>
+		<button id="WeekBtn">Haftalık Tahmin</button>
+
+	</div>
+	<script>
+		document.getElementById("getWeatherBtn").addEventListener("click", function() {
+			let city = document.getElementById("cityInput").value;
+			if (city) {
+				fetch(`/Home/GetWeather?city=${city}`)
+				.then( response => response.json())
+					.then(data => {
+							debugger;
+							document.getElementById("city").innerHTML = data.city;
+							document.getElementById("temperature").innerHTML = data.temperature;
+							document.getElementById("description").innerHTML = data.description;
+							document.getElementById("lat").innerHTML = data.lat;
+							document.getElementById("lon").innerHTML = data.lon;
+					})
+					.catch(error => console.error('Hata:', error));
+			}
+		});
+
+
+		document.getElementById("WeekBtn").addEventListener("click", function() {
+			let city = document.getElementById("cityInput").value;
+			if (city) {
+				window.location.href = `/Home/WeeklyForecast?city=${city}`;
+			}
+		});
+	</script>
 </div>
-
 <div class="popular-cities">
     <div class="city-box" id="city-istanbul">
         <img src="~/images/istanbul.png" alt="Weather Icon">
         <h3>İstanbul</h3>
-        <p><span class="temp"></span></p>
+        <p>Sıcaklık :<span class="temp"></span> °C</p>
         <p><span class="desc"></span></p>
     </div>
     <div class="city-box" id="city-ankara">
         <img src="~/images/ankara.png" alt="Weather Icon">
         <h3>Ankara</h3>
-        <p> <span class="temp"></span></p>
+        <p>Sıcaklık :<span class="temp"></span> °C</p>
         <p> <span class="desc"></span></p>
     </div>
     <div class="city-box" id="city-izmir">
         <img src="~/images/izmir.png" alt="Weather Icon">
         <h3>İzmir</h3>
-        <p><span class="temp"></span></p>
+        <p>Sıcaklık :<span class="temp"></span> °C</p>
         <p><span class="desc"></span></p>
     </div>
     <div class="city-box" id="city-bursa">
         <img src="~/images/bursa.png" alt="Weather Icon">
         <h3>Bursa</h3>
-        <p><span class="temp"></span></p>
+        <p>Sıcaklık :<span class="temp"></span> °C</p>
         <p><span class="desc"></span></p>
     </div>
     <div class="city-box" id="city-antalya">
         <img src="~/images/antalya.png" alt="Weather Icon">
         <h3>Antalya</h3>
-        <p><span class="temp"></span></p>
+        <p>Sıcaklık :<span class="temp"></span> °C</p>
         <p><span class="desc"></span></p>
     </div>
 </div>
@@ -62,73 +92,91 @@
     <div class="city-box" id="city-paris">
         <img src="~/images/paris.png" alt="Weather Icon">
         <h3>Paris</h3>
-        <p><span class="temp"></span></p>
+        <p>Sıcaklık :<span class="temp"></span> °C</p>
         <p><span class="desc"></span></p>
     </div>
     <div class="city-box" id="city-londra">
-        <img src="~/images/londra.png" alt="Weather Icon">
+        <img src="~/images/london.png" alt="Weather Icon">
         <h3>Londra</h3>
-        <p><span class="temp"></span>°C</p>
+        <p>Sıcaklık :<span class="temp"></span> °C</p>
         <p><span class="desc"></span></p>
     </div>
     <div class="city-box" id="city-berlin">
         <img src="~/images/berlin.png" alt="Weather Icon">
         <h3>Berlin</h3>
-        <p><span class="temp"></span>°C</p>
+        <p>Sıcaklık :<span class="temp"></span> °C</p>
         <p><span class="desc"></span></p>
     </div>
     <div class="city-box" id="city-moscow">
         <img src="~/images/moscow.png" alt="Weather Icon">
         <h3>Moskova</h3>
-        <p><span class="temp"></span>°C</p>
+        <p>Sıcaklık :<span class="temp"></span> °C</p>
         <p><span class="desc"></span></p>
     </div>
     <div class="city-box" id="city-washington">
-        <img src="~/images/nyc.png" alt="Weather Icon">
+        <img src="~/images/washington.png" alt="Weather Icon">
         <h3>Washington</h3>
-        <p><span class="temp"></span>°C</p>
+        <p>Sıcaklık :<span class="temp"></span> °C</p>
         <p><span class="desc"></span></p>
     </div>
 </div>
 
 <script>
-    function normalizeCityId(city) {
-    return city.toLowerCase()
-        .replace(/ı/g, "i")
-        .replace(/ü/g, "u")
-        .replace(/ö/g, "o")
-        .replace(/ç/g, "c")
-        .replace(/ş/g, "s")
-        .replace(/ğ/g, "g");
-}
+  
+    document.addEventListener('DOMContentLoaded', () => {
 
-const cities = ["Istanbul", "Ankara", "Izmir", "Bursa", "Antalya"];
+        function normalizeCityId(city) {
+            return city.toLowerCase()
+                .replace(/ı/g, "i") 
+                .replace(/ü/g, "u")
+                .replace(/ö/g, "o")
+                .replace(/ç/g, "c")
+                .replace(/ş/g, "s")
+                .replace(/ğ/g, "g")
+                .replace(/\s+/g, "-");
+        }
 
-cities.forEach(city => {
-    fetch(`/Home/GetWeather?city=${city}`)
-        .then(response => response.text()) 
-        .then(data => {
-            let cityId = "city-" + city.toLowerCase(); 
-            document.querySelector(`#${cityId} .temp`).innerHTML = data; 
-        })
-        .catch(error => console.error(`Hata: ${city}`, error));
-});
+        function fetchAndUpdateCityWeather(cityName) {
+            const cityId = "city-" + normalizeCityId(cityName);
+            const cityBox = document.getElementById(cityId);
 
-</script>
+            if (!cityBox) {
+                console.warn(`Element with ID '${cityId}' for city '${cityName}' not found in HTML.`);
+                return;
+            }
 
+            const tempElement = cityBox.querySelector('.temp');
+            const descElement = cityBox.querySelector('.desc');
 
+            if (!tempElement || !descElement) {
+                 console.error(`Temperature (.temp) or Description (.desc) span not found inside #${cityId}`);
+                 return;
+            }
+            fetch(`/Home/GetWeather?city=${encodeURIComponent(cityName)}`) 
+                .then(response => {
+                    if (!response.ok) {
+                        return response.text().then(text => {
+                            throw new Error(`HTTP error! Status: ${response.status} - ${text || response.statusText} for city ${cityName}`);
+                        });
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    tempElement.textContent = data.temperature || 'N/A'; 
+                    descElement.textContent = data.description || 'N/A'; 
+                })
+                .catch(error => {
+                    console.error(`Hata (${cityName}):`, error);
+                    tempElement.textContent = 'Hata';
+                    descElement.textContent = 'Alınamadı';
+                });
+        }
 
+        const cities = ["Istanbul", "Ankara", "Izmir", "Bursa", "Antalya"]; 
+        const citiesAbroad = ["Paris", "Londra", "Berlin", "Moscow", "Washington"];
 
-<script>
+        cities.forEach(fetchAndUpdateCityWeather);
+        citiesAbroad.forEach(fetchAndUpdateCityWeather);
 
-     const citiesAbroad = ["Paris", "Londra", "Berlin", "Moscow", "Washington"]; 
-    citiesAbroad.forEach(city => {
-        fetch(`/Home/GetWeather?city=${city}`)
-            .then(response => response.text()) 
-            .then(data => {
-                    let cityId = "city-" + city.toLowerCase();
-                document.querySelector(`#${cityId} .temp`).innerHTML = data;
-            })
-            .catch(error => console.error(`Hata: ${city}`, error));
-    });
+    }); 
 </script>

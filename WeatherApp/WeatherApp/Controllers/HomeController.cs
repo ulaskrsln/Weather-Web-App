@@ -3,6 +3,8 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using WeatherApp.Models.ResponseModel;
+using WeatherApp.Models;
 
 namespace WeatherApp.Controllers
 {
@@ -37,12 +39,19 @@ namespace WeatherApp.Controllers
                 if (response.IsSuccessStatusCode)
                 {
                     string responseBody = await response.Content.ReadAsStringAsync();
-                    JObject weatherData = JObject.Parse(responseBody);
 
-                    string temperature = weatherData["list"][0]["main"]["temp"].ToString();
-                    string description = weatherData["list"][0]["weather"][0]["description"].ToString();
+                    var weatherData = JsonConvert.DeserializeObject<WeatherResponseModel>(responseBody);
 
-                    return Content($"Þehir: {city}<br>Sýcaklýk: {temperature}°C<br>Durum: {description}");
+                    WeatherViewModel viewModel = new WeatherViewModel
+                    {
+                        City = weatherData.city.name,
+                        Temperature = weatherData.list[0].main.temp.ToString(),
+                        Description = weatherData.list[0].weather[0].description,
+                        Lat = weatherData.city.coord.lat,
+                        Lon = weatherData.city.coord.lon
+                    };
+
+                    return Json(viewModel);
                 }
                 else
                 {
@@ -65,7 +74,6 @@ namespace WeatherApp.Controllers
                 var description = weatherData.weather[0].description;
                 var icon = weatherData.weather[0].icon;
 
-                // Veriyi döndür
                 return Json(new { temp, description, icon });
             }
         }

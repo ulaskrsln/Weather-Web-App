@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System.Net.Http;
 using System.Threading.Tasks;
+using WeatherApp.Models.ResponseModel;
 
 namespace YourProject.Controllers
 {
@@ -24,7 +25,7 @@ namespace YourProject.Controllers
                 var weatherData = JsonConvert.DeserializeObject<WeatherData>(response);
 
                 var weeklyWeatherData = weatherData.Daily.Select(day =>
-                    $"{GetDayName(day.Dt)}: {day.Temp.Day}°C, {day.Weather[0].Description}")
+                    $"{GetDayName(day.Dt)}: {day.Temp.Day}°C, {day.Weather[0].description}")
                     .ToArray();
 
                 var weatherText = string.Join("\n", weeklyWeatherData);  // Haftalık verileri birleştiriyoruz
@@ -40,26 +41,6 @@ namespace YourProject.Controllers
         }
 
         // API'den alınan veriyi deseralize etmek için model
-        public class WeatherData
-        {
-            public List<Daily> Daily { get; set; }
-        }
-
-        public class Daily
-        {
-            public long Dt { get; set; }
-            public Temp Temp { get; set; }
-            public List<Weather> Weather { get; set; }
-        }
-
-        public class Temp
-        {
-            public double Day { get; set; }
-        }
-
-        public class Weather
-        {
-            public string Description { get; set; }
-        }
+        
     }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "F67pd5ZWc/f4O5CiLrcsODEw+wrzhoq/foYAVKXb6NY=",
+  "Hash": "kM9d5zPGw1VO6DfD8oROC1RHiGt/fZmCtP3iE78gamU=",
   "Source": "WeatherApp",
   "BasePath": "_content/WeatherApp",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "stdvg6daji",
-      "Integrity": "wI8drXKEtEg6AtgU66aDxUuaykEDFqP5b8tfm9AMAH4=",
+      "Fingerprint": "lp9gwr7yx3",
+      "Integrity": "KfEp1jsMgPxr+3tdFh3CiciqTmIlcw1KZrwms+ydUXI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -143,6 +143,27 @@
       "OriginalItemSpec": "wwwroot\\images\\antalya.png"
     },
     {
+      "Identity": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\images\\berlin.png",
+      "SourceId": "WeatherApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\",
+      "BasePath": "_content/WeatherApp",
+      "RelativePath": "images/berlin#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "qr846i31km",
+      "Integrity": "mjz8ArzXzJyFisq8tuLpjKfmi0Mne71XpKis4oMi4EA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\berlin.png"
+    },
+    {
       "Identity": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\images\\bursa.png",
       "SourceId": "WeatherApp",
       "SourceType": "Discovered",
@@ -206,6 +227,69 @@
       "OriginalItemSpec": "wwwroot\\images\\izmir.png"
     },
     {
+      "Identity": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\images\\london.png",
+      "SourceId": "WeatherApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\",
+      "BasePath": "_content/WeatherApp",
+      "RelativePath": "images/london#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "b76ttc3089",
+      "Integrity": "p+EUAgPGjXgvEPKGFbZZpvnY3sUCLRSwz22v9/Gj0c8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\london.png"
+    },
+    {
+      "Identity": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\images\\moscow.png",
+      "SourceId": "WeatherApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\",
+      "BasePath": "_content/WeatherApp",
+      "RelativePath": "images/moscow#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "isq1vdn67l",
+      "Integrity": "4gAh28n4CHJVygiwpUdO0Q8YPzQicWSkxd87ce1Bt4w=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\moscow.png"
+    },
+    {
+      "Identity": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\images\\paris.png",
+      "SourceId": "WeatherApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\",
+      "BasePath": "_content/WeatherApp",
+      "RelativePath": "images/paris#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "h5jg5skn3x",
+      "Integrity": "9dnhJHkXKjgAiCjDFGortyPB/7u1acLqrOg5in1hkIo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\paris.png"
+    },
+    {
       "Identity": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\images\\sun-solid.svg",
       "SourceId": "WeatherApp",
       "SourceType": "Discovered",
@@ -225,6 +309,27 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\sun-solid.svg"
+    },
+    {
+      "Identity": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\images\\washington.png",
+      "SourceId": "WeatherApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\",
+      "BasePath": "_content/WeatherApp",
+      "RelativePath": "images/washington#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "i6722yw4j9",
+      "Integrity": "2prwJzBNlU05346kSn9e5T28YSesTUlCQhqToWLHk2U=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\washington.png"
     },
     {
       "Identity": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\js\\site.js",
@@ -1457,7 +1562,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4292"
+          "Value": "5371"
         },
         {
           "Name": "Content-Type",
@@ -1465,11 +1570,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"wI8drXKEtEg6AtgU66aDxUuaykEDFqP5b8tfm9AMAH4=\""
+          "Value": "\"KfEp1jsMgPxr+3tdFh3CiciqTmIlcw1KZrwms+ydUXI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 28 Mar 2025 14:44:23 GMT"
+          "Value": "Fri, 04 Apr 2025 08:16:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1479,12 +1584,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-wI8drXKEtEg6AtgU66aDxUuaykEDFqP5b8tfm9AMAH4="
+          "Value": "sha256-KfEp1jsMgPxr+3tdFh3CiciqTmIlcw1KZrwms+ydUXI="
         }
       ]
     },
     {
-      "Route": "css/site.stdvg6daji.css",
+      "Route": "css/site.lp9gwr7yx3.css",
       "AssetFile": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1494,7 +1599,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4292"
+          "Value": "5371"
         },
         {
           "Name": "Content-Type",
@@ -1502,11 +1607,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"wI8drXKEtEg6AtgU66aDxUuaykEDFqP5b8tfm9AMAH4=\""
+          "Value": "\"KfEp1jsMgPxr+3tdFh3CiciqTmIlcw1KZrwms+ydUXI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 28 Mar 2025 14:44:23 GMT"
+          "Value": "Fri, 04 Apr 2025 08:16:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1516,7 +1621,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "stdvg6daji"
+          "Value": "lp9gwr7yx3"
         },
         {
           "Name": "label",
@@ -1524,7 +1629,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-wI8drXKEtEg6AtgU66aDxUuaykEDFqP5b8tfm9AMAH4="
+          "Value": "sha256-KfEp1jsMgPxr+3tdFh3CiciqTmIlcw1KZrwms+ydUXI="
         }
       ]
     },
@@ -1775,6 +1880,88 @@
       ]
     },
     {
+      "Route": "images/berlin.png",
+      "AssetFile": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\images\\berlin.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24706"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mjz8ArzXzJyFisq8tuLpjKfmi0Mne71XpKis4oMi4EA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 03 Apr 2025 13:47:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-mjz8ArzXzJyFisq8tuLpjKfmi0Mne71XpKis4oMi4EA="
+        }
+      ]
+    },
+    {
+      "Route": "images/berlin.qr846i31km.png",
+      "AssetFile": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\images\\berlin.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24706"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mjz8ArzXzJyFisq8tuLpjKfmi0Mne71XpKis4oMi4EA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 03 Apr 2025 13:47:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qr846i31km"
+        },
+        {
+          "Name": "label",
+          "Value": "images/berlin.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-mjz8ArzXzJyFisq8tuLpjKfmi0Mne71XpKis4oMi4EA="
+        }
+      ]
+    },
+    {
       "Route": "images/bursa.dojvj4yh8n.png",
       "AssetFile": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\images\\bursa.png",
       "Selectors": [],
@@ -2021,6 +2208,252 @@
       ]
     },
     {
+      "Route": "images/london.b76ttc3089.png",
+      "AssetFile": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\images\\london.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "23657"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"p+EUAgPGjXgvEPKGFbZZpvnY3sUCLRSwz22v9/Gj0c8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 03 Apr 2025 13:49:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "b76ttc3089"
+        },
+        {
+          "Name": "label",
+          "Value": "images/london.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-p+EUAgPGjXgvEPKGFbZZpvnY3sUCLRSwz22v9/Gj0c8="
+        }
+      ]
+    },
+    {
+      "Route": "images/london.png",
+      "AssetFile": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\images\\london.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "23657"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"p+EUAgPGjXgvEPKGFbZZpvnY3sUCLRSwz22v9/Gj0c8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 03 Apr 2025 13:49:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-p+EUAgPGjXgvEPKGFbZZpvnY3sUCLRSwz22v9/Gj0c8="
+        }
+      ]
+    },
+    {
+      "Route": "images/moscow.isq1vdn67l.png",
+      "AssetFile": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\images\\moscow.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "36636"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4gAh28n4CHJVygiwpUdO0Q8YPzQicWSkxd87ce1Bt4w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 03 Apr 2025 13:46:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "isq1vdn67l"
+        },
+        {
+          "Name": "label",
+          "Value": "images/moscow.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4gAh28n4CHJVygiwpUdO0Q8YPzQicWSkxd87ce1Bt4w="
+        }
+      ]
+    },
+    {
+      "Route": "images/moscow.png",
+      "AssetFile": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\images\\moscow.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "36636"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4gAh28n4CHJVygiwpUdO0Q8YPzQicWSkxd87ce1Bt4w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 03 Apr 2025 13:46:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4gAh28n4CHJVygiwpUdO0Q8YPzQicWSkxd87ce1Bt4w="
+        }
+      ]
+    },
+    {
+      "Route": "images/paris.h5jg5skn3x.png",
+      "AssetFile": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\images\\paris.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "60851"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9dnhJHkXKjgAiCjDFGortyPB/7u1acLqrOg5in1hkIo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 03 Apr 2025 13:50:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "h5jg5skn3x"
+        },
+        {
+          "Name": "label",
+          "Value": "images/paris.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-9dnhJHkXKjgAiCjDFGortyPB/7u1acLqrOg5in1hkIo="
+        }
+      ]
+    },
+    {
+      "Route": "images/paris.png",
+      "AssetFile": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\images\\paris.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "60851"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9dnhJHkXKjgAiCjDFGortyPB/7u1acLqrOg5in1hkIo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 03 Apr 2025 13:50:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-9dnhJHkXKjgAiCjDFGortyPB/7u1acLqrOg5in1hkIo="
+        }
+      ]
+    },
+    {
       "Route": "images/sun-solid.svg",
       "AssetFile": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\images\\sun-solid.svg",
       "Selectors": [],
@@ -2099,6 +2532,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-BuNWLnrB7PkvEmfIG6PiWe1vpCYLR9zYlJ3lPcwlON4="
+        }
+      ]
+    },
+    {
+      "Route": "images/washington.i6722yw4j9.png",
+      "AssetFile": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\images\\washington.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "17761"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2prwJzBNlU05346kSn9e5T28YSesTUlCQhqToWLHk2U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 03 Apr 2025 13:45:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "i6722yw4j9"
+        },
+        {
+          "Name": "label",
+          "Value": "images/washington.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2prwJzBNlU05346kSn9e5T28YSesTUlCQhqToWLHk2U="
+        }
+      ]
+    },
+    {
+      "Route": "images/washington.png",
+      "AssetFile": "D:\\FirstProjectTest\\Yeni klasör\\WeatherApp\\WeatherApp\\wwwroot\\images\\washington.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "17761"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2prwJzBNlU05346kSn9e5T28YSesTUlCQhqToWLHk2U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 03 Apr 2025 13:45:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2prwJzBNlU05346kSn9e5T28YSesTUlCQhqToWLHk2U="
         }
       ]
     },

@@ -1,53 +1,232 @@
 ﻿@{
-    ViewData["Title"] = "7 Günlük Hava Durumu";
+    ViewData["Title"] = "Hava Durumu Sorgulama";
 }
 
-<div class="weekly-forecast">
-    <h2>İstanbul 7 Günlük Hava Durumu</h2>
-	<p>Bu kısımın üzeinde çalışmaya devam ediyorum. Yapmak istediğim şey yazılan şehirin 7 günlük hava tahminini yazdırmak. Örnek olarak bir tasarım yaptım. Veriler gerçek veriler değildir!</p>
+<div id="content">
+    <h1>Hava Durumu Uygulaması</h1>
+    <p>Anlık hava durumu bilgisini almak için lütfen bir şehir adı girin:</p>
 
-    <div class="forecast-cards">
-        <div class="forecast-card">
-            <h3>Pazartesi</h3>
-            <p><strong>18°C</strong></p>
-            <p>Açık</p>
-        </div>
+    <div class="search-container" style="margin-bottom: 20px;">
+        <label for="cityInput" style="margin-right: 5px;">Şehir Adı:</label>
+        <input type="text" id="cityInput" placeholder="Örn: İstanbul">
+        <button id="WeeklyForecastBtn" style="margin-left: 5px;">Hava Durumu Getir</button>
+    </div>
 
-        <div class="forecast-card">
-            <h3>Salı</h3>
-            <p><strong>20°C</strong></p>
-            <p>Güneşli</p>
+    <div id="CurrentWeather" class="current-weather" style="border: 1px solid #ccc; padding: 15px; border-radius: 5px; margin-top: 20px; background-color: #f9f9f9;">
+        <h2>Anlık Hava Durumu</h2>
+        <div class="location">
+            <strong>Şehir:</strong> <span id="city">-</span>
         </div>
+        <div class="temperature">
+            <strong>Sıcaklık:</strong> <span id="temperature">-</span>
+        </div>
+        <div class="description">
+            <strong>Açıklama:</strong> <span id="description">Şehir girin...</span>
+        </div>
+        <div class="coordinates">
+            <strong>Koordinatlar:</strong>
+            Enlem: <span id="lat">-</span>,
+            Boylam: <span id="lon">-</span>
+        </div>
+    </div>
 
-        <div class="forecast-card">
-            <h3>Çarşamba</h3>
-            <p><strong>19°C</strong></p>
-            <p>Bulutlu</p>
-        </div>
+</div>
 
-        <div class="forecast-card">
-            <h3>Perşembe</h3>
-            <p><strong>17°C</strong></p>
-            <p>Yağmurlu</p>
-        </div>
+<div class="forecast-container" style="margin-top: 30px;">
+    <h2>5 Günlük Tahmin : <br></h2>
+    <div class="weather-card">
+        <h3 class="day-name">Gün 1</h3>
+        <p class="date"></p>
+        <img src="" alt="hava durumu ikonu" class="weather-icon" style="width: 50px; height: 50px; display: block; margin: 10px auto;">
+        <p class="temperature">
+            <span class="temp-high"></span> / <span class="temp-low"></span>
+        </p>
+        <p class="weather-description"></p>
+    </div>
 
-        <div class="forecast-card">
-            <h3>Cuma</h3>
-            <p><strong>21°C</strong></p>
-            <p>Güneşli</p>
-        </div>
+    <div class="weather-card">
+        <h3 class="day-name">Gün 2</h3>
+        <p class="date"></p>
+        <img src="" alt="hava durumu ikonu" class="weather-icon" style="width: 50px; height: 50px; display: block; margin: 10px auto;">
+        <p class="temperature">
+            <span class="temp-high"></span> / <span class="temp-low"></span>
+        </p>
+        <p class="weather-description"></p>
+    </div>
 
-        <div class="forecast-card">
-            <h3>Cumartesi</h3>
-            <p><strong>23°C</strong></p>
-            <p>Çok Güneşli</p>
-        </div>
+    <div class="weather-card">
+        <h3 class="day-name">Gün 3</h3>
+        <p class="date"></p>
+        <img src="" alt="hava durumu ikonu" class="weather-icon" style="width: 50px; height: 50px; display: block; margin: 10px auto;">
+        <p class="temperature">
+            <span class="temp-high"></span> / <span class="temp-low"></span>
+        </p>
+        <p class="weather-description"></p>
+    </div>
 
-        <div class="forecast-card">
-            <h3>Pazar</h3>
-            <p><strong>22°C</strong></p>
-            <p>Az Bulutlu</p>
-        </div>
+    <div class="weather-card">
+        <h3 class="day-name">Gün 4</h3>
+        <p class="date"></p>
+        <img src="" alt="hava durumu ikonu" class="weather-icon" style="width: 50px; height: 50px; display: block; margin: 10px auto;">
+        <p class="temperature">
+            <span class="temp-high"></span> / <span class="temp-low"></span>
+        </p>
+        <p class="weather-description"></p>
+    </div>
+
+    <div class="weather-card">
+        <h3 class="day-name">Gün 5</h3>
+        <p class="date"></p>
+        <img src="" alt="hava durumu ikonu" class="weather-icon" style="width: 50px; height: 50px; display: block; margin: 10px auto;">
+        <p class="temperature">
+            <span class="temp-high"></span> / <span class="temp-low"></span>
+        </p>
+        <p class="weather-description"></p>
     </div>
 </div>
 
+<script>
+    const apiKey = "7492afa40ac6decc24d9235f3313fcbf"; 
+
+    const cityInput = document.getElementById("cityInput");
+    const forecastBtn = document.getElementById("WeeklyForecastBtn");
+    const currentCityEl = document.getElementById("city");
+    const currentTempEl = document.getElementById("temperature");
+    const currentDescEl = document.getElementById("description");
+    const currentLatEl = document.getElementById("lat");
+    const currentLonEl = document.getElementById("lon");
+    const weatherCards = document.querySelectorAll('.forecast-container .weather-card');
+
+    function clearForecastCards() {
+        weatherCards.forEach((card, index) => {
+            card.style.display = ''; 
+            card.querySelector('.day-name').textContent = `Gün ${index + 1}`; 
+            card.querySelector('.date').textContent = "";
+            const iconEl = card.querySelector('.weather-icon');
+            if (iconEl) {
+                iconEl.src = "";
+                iconEl.alt = "hava durumu ikonu";
+                iconEl.style.display = 'none'; 
+            }
+            card.querySelector('.temp-high').textContent = "";
+            card.querySelector('.temp-low').textContent = "";
+            card.querySelector('.weather-description').textContent = "";
+        });
+    }
+
+    
+    function processForecastDataSimple(forecastList) {
+        const dailySummaries = [];
+        const processedDates = new Set();
+
+        for (const item of forecastList) {
+            const dateStr = item.dt_txt.split(' ')[0];
+
+            
+            if (!processedDates.has(dateStr) && dailySummaries.length < 5) {
+                processedDates.add(dateStr);
+                const daySummary = {
+                    date: dateStr,
+                    dt: item.dt,
+                    temp_min: item.main.temp_min,
+                    temp_max: item.main.temp_max,
+                    description: item.weather[0].description,
+                    icon: item.weather[0].icon
+                };
+                dailySummaries.push(daySummary);
+            }
+            if (dailySummaries.length >= 5) break; 
+        }
+        return dailySummaries;
+    }
+
+
+    function displayFiveDayForecast(processedDailyData) {
+        processedDailyData.forEach((dayData, index) => {
+            if (index >= weatherCards.length) return;
+
+            const card = weatherCards[index]; 
+            const dateObj = new Date(dayData.dt * 1000);
+            const dayName = dateObj.toLocaleDateString('tr-TR', { weekday: 'long' });
+            const dateString = dateObj.toLocaleDateString('tr-TR', { day: 'numeric', month: 'short' });
+
+            const tempHigh = Math.round(dayData.temp_max);
+            const tempLow = Math.round(dayData.temp_min);
+            const description = dayData.description;
+            const iconCode = dayData.icon;
+            const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@@2x.png`; 
+
+            card.querySelector('.day-name').textContent = dayName;
+            card.querySelector('.date').textContent = dateString;
+            const iconEl = card.querySelector('.weather-icon');
+             if (iconEl) {
+                iconEl.src = iconUrl;
+                iconEl.alt = description;
+                iconEl.style.display = 'block';
+            }
+            card.querySelector('.temp-high').textContent = `${tempHigh}°C`;
+            card.querySelector('.temp-low').textContent = `${tempLow}°C`;
+            card.querySelector('.weather-description').textContent = description;
+        });
+    }
+
+    forecastBtn.addEventListener("click", function () {
+        const city = cityInput.value.trim();
+        if (!city) {
+            alert("Lütfen bir şehir adı girin.");
+            return;
+        }
+
+        clearForecastCards();
+        currentCityEl.innerText = "-";
+        currentTempEl.innerText = "-";
+        currentDescEl.innerText = "Yükleniyor...";
+        currentLatEl.innerText = "-";
+        currentLonEl.innerText = "-";
+
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=tr`)
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(errData => {
+                         throw new Error(errData.message || `Şehir bulunamadı veya API hatası (Kod: ${response.status})`);
+                    });
+                }
+                return response.json();
+            })
+            .then(currentData => {
+                currentCityEl.innerText = currentData.name;
+                currentTempEl.innerText = Math.round(currentData.main.temp) + " °C";
+                currentDescEl.innerText = currentData.weather[0].description;
+                currentLatEl.innerText = currentData.coord.lat.toFixed(4);
+                currentLonEl.innerText = currentData.coord.lon.toFixed(4);
+
+                
+                return fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric&lang=tr`);
+            })
+            .then(forecastResponse => {
+                if (!forecastResponse.ok) {
+                    return forecastResponse.json().then(errData => {
+                         throw new Error(errData.message || `5 Günlük tahmin API hatası (Kod: ${forecastResponse.status})`);
+                    });
+                }
+                return forecastResponse.json();
+            })
+            .then(forecastData => {
+                
+                if (forecastData.list && forecastData.list.length > 0) {
+                    const dailySummaries = processForecastDataSimple(forecastData.list);
+                    displayFiveDayForecast(dailySummaries);
+                 } else {
+                    throw new Error("API yanıtında beklenen tahmin listesi verisi bulunamadı.");
+                 }
+            })
+            .catch(error => {
+                console.error('Hata:', error);
+                alert(`Bir hata oluştu: ${error.message}`);
+                currentDescEl.innerText = "Veri alınamadı.";
+                clearForecastCards();
+            });
+
+    }); 
+
+</script>

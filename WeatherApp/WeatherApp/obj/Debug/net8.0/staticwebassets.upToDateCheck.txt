@@ -2,10 +2,15 @@ wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\images\ankara.png
 wwwroot\images\antalya.png
+wwwroot\images\berlin.png
 wwwroot\images\bursa.png
 wwwroot\images\istanbul.png
 wwwroot\images\izmir.png
+wwwroot\images\london.png
+wwwroot\images\moscow.png
+wwwroot\images\paris.png
 wwwroot\images\sun-solid.svg
+wwwroot\images\washington.png
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
