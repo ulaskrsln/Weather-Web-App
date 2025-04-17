@@ -1,0 +1,151 @@
+﻿@{
+    ViewBag.Title = "Weather Details";
+}
+
+<head>
+    <h1 style="text-align: center">
+        Detaylı Hava Durumu Bilgileri
+    </h1>
+</head>
+
+<body>
+
+    <div class="search" id="DetailSearch">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Şehir Arama</h2>
+                    <p>Lütfen bir şehir adı girin:</p>
+                    <input type="text" id="cityInput" placeholder="Şehir Adı">
+                    <button id="getWeatherBtn">Hava Durumu Getir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="detailsbar" id="weatherDetailsContainer" style="margin-top: 20px; padding: 20px; border-radius: 8px;">
+        
+        <div style="text-align:center">
+        <h2>Hava Durumu Bilgileri</h2>
+        </div>
+        <div class="row">
+            <div class="left-row">
+                <p><strong>Şehir:</strong> <span id="details-city">-</span></p>
+                <p><strong>Sıcaklık:</strong> <span id="details-temp">-</span> °C</p>
+                <p><strong>Hissedilen Sıcaklık:</strong> <span id="details-feels-like">-</span> °C</p>
+                <p><strong>Günlük Min Sıcaklık:</strong> <span id="details-temp-min">-</span> °C</p> 
+                <p><strong>Günlük Max Sıcaklık:</strong> <span id="details-temp-max">-</span> °C</p> 
+                <p><strong>Açıklama:</strong> <span id="details-desc">Şehir girin...</span></p>
+                <p><strong>Nem:</strong> <span id="details-humidity">-</span> %</p>
+            </div>
+            <div class="right-row">
+                <p><strong>Rüzgar Hızı:</strong> <span id="details-wind">-</span> m/s</p>
+                <p><strong>Basınç:</strong> <span id="details-pressure">-</span> hPa</p>
+                <p><strong>Görüş Mesafesi:</strong> <span id="details-visibility">-</span> m</p>
+                <p><strong>Bulutluluk:</strong> <span id="details-clouds">-</span> %</p> 
+                <p><strong>Koordinat:</strong> <span id="details-coords">-</span></p>
+                <p><strong>Gün Doğumu:</strong> <span id="details-sunrise">-</span></p>
+                <p><strong>Gün Batımı:</strong> <span id="details-sunset">-</span></p>
+            </div>
+        </div> 
+    </div> 
+</body>
+
+<script>
+    const apiKey = "7492afa40ac6decc24d9235f3313fcbf"; 
+
+    const cityInput = document.getElementById("cityInput");
+    const getWeatherBtn = document.getElementById("getWeatherBtn");
+
+    const detailsCityEl = document.getElementById("details-city");
+    const detailsTempEl = document.getElementById("details-temp");
+    const detailsFeelsLikeEl = document.getElementById("details-feels-like");
+    const detailsTempMinEl = document.getElementById("details-temp-min");
+    const detailsTempMaxEl = document.getElementById("details-temp-max");
+    const detailsDescEl = document.getElementById("details-desc");
+    const detailsHumidityEl = document.getElementById("details-humidity");
+    const detailsWindEl = document.getElementById("details-wind");
+    const detailsPressureEl = document.getElementById("details-pressure");
+    const detailsVisibilityEl = document.getElementById("details-visibility");
+    const detailsCloudsEl = document.getElementById("details-clouds");
+    const detailsCoordsEl = document.getElementById("details-coords"); 
+    const detailsSunriseEl = document.getElementById("details-sunrise");
+    const detailsSunsetEl = document.getElementById("details-sunset");
+    const detailsContainer = document.getElementById("weatherDetailsContainer");
+
+    function formatTime(unixTimestamp) {
+        const date = new Date(unixTimestamp * 1000);
+        return date.toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' });
+    }
+
+     function clearDetails() {
+        detailsCityEl.innerText = "-";
+        detailsTempEl.innerText = "-";
+        detailsFeelsLikeEl.innerText = "-";
+        detailsTempMinEl.innerText = "-";
+        detailsTempMaxEl.innerText = "-";
+        detailsDescEl.innerText = "Şehir girin...";
+        detailsHumidityEl.innerText = "-";
+        detailsWindEl.innerText = "-";
+        detailsPressureEl.innerText = "-";
+        detailsVisibilityEl.innerText = "-";
+        detailsCloudsEl.innerText = "-";
+        detailsCoordsEl.innerText = "-"; 
+        detailsSunriseEl.innerText = "-";
+        detailsSunsetEl.innerText = "-";
+     }
+
+
+    getWeatherBtn.addEventListener("click", function() {
+        const city = cityInput.value.trim();
+        if (!city) {
+            alert("Lütfen bir şehir adı girin.");
+            return;
+        }
+
+        clearDetails();
+
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=tr`)
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(errData => {
+                        throw new Error(errData.message || `Detaylı bilgi alınamadı (Kod: ${response.status})`);
+                    });
+                }
+                return response.json();
+            })
+            .then(data => {
+                
+                detailsCityEl.innerText = data.name;
+                detailsTempEl.innerText = Math.round(data.main.temp);
+                detailsFeelsLikeEl.innerText = Math.round(data.main.feels_like);
+                detailsTempMinEl.innerText = Math.round(data.main.temp_min);
+                detailsTempMaxEl.innerText = Math.round(data.main.temp_max);
+                detailsDescEl.innerText = data.weather[0].description;
+                detailsHumidityEl.innerText = data.main.humidity;
+                detailsWindEl.innerText = data.wind.speed;
+                detailsPressureEl.innerText = data.main.pressure;
+                detailsVisibilityEl.innerText = data.visibility;
+                detailsCloudsEl.innerText = data.clouds ? data.clouds.all : "-";
+
+               
+                if (data.coord) { 
+                    const latFormatted = data.coord.lat.toFixed(4); 
+                    const lonFormatted = data.coord.lon.toFixed(4); 
+                    detailsCoordsEl.innerText = `(${latFormatted}, ${lonFormatted})`;
+                } else {
+                    detailsCoordsEl.innerText = "-"; 
+                }
+
+                detailsSunriseEl.innerText = formatTime(data.sys.sunrise);
+                detailsSunsetEl.innerText = formatTime(data.sys.sunset);
+            })
+            .catch(error => {
+                console.error("Detaylı hava durumu alınırken hata:", error);
+                alert(`Bir hata oluştu: ${error.message}`);
+                clearDetails();
+                detailsDescEl.innerText = "Veri alınamadı.";
+            });
+    });
+
+</script>

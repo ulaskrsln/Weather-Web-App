@@ -5,14 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{16CB9098-1958-4491-B30F-B9B184086F67}|WeatherApp\\WeatherApp.csproj|d:\\firstprojecttest\\yeni klas\u00F6r\\weatherapp\\weatherapp\\views\\home\\weeklyforecast.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{16CB9098-1958-4491-B30F-B9B184086F67}|WeatherApp\\WeatherApp.csproj|solutionrelative:weatherapp\\views\\home\\weeklyforecast.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{16CB9098-1958-4491-B30F-B9B184086F67}|WeatherApp\\WeatherApp.csproj|d:\\firstprojecttest\\yeni klas\u00F6r\\weatherapp\\weatherapp\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{16CB9098-1958-4491-B30F-B9B184086F67}|WeatherApp\\WeatherApp.csproj|solutionrelative:weatherapp\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{16CB9098-1958-4491-B30F-B9B184086F67}|WeatherApp\\WeatherApp.csproj|d:\\firstprojecttest\\yeni klas\u00F6r\\weatherapp\\weatherapp\\models\\responsemodel\\weeklyresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{16CB9098-1958-4491-B30F-B9B184086F67}|WeatherApp\\WeatherApp.csproj|solutionrelative:weatherapp\\models\\responsemodel\\weeklyresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,20 +14,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "site.css",
-              "DocumentMoniker": "D:\\FirstProjectTest\\Yeni klas\u00F6r\\WeatherApp\\WeatherApp\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "WeatherApp\\wwwroot\\css\\site.css",
-              "ToolTip": "D:\\FirstProjectTest\\Yeni klas\u00F6r\\WeatherApp\\WeatherApp\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "WeatherApp\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAM8AAAAAzMzMzMwUwOYAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-04T08:02:48.481Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -44,22 +24,10 @@
               "RelativeDocumentMoniker": "WeatherApp\\Views\\Home\\WeeklyForecast.cshtml",
               "ToolTip": "D:\\FirstProjectTest\\Yeni klas\u00F6r\\WeatherApp\\WeatherApp\\Views\\Home\\WeeklyForecast.cshtml",
               "RelativeToolTip": "WeatherApp\\Views\\Home\\WeeklyForecast.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOYAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-03T14:04:20.15Z",
+              "WhenOpened": "2025-04-04T14:47:10.448Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "WeeklyResponseModel.cs",
-              "DocumentMoniker": "D:\\FirstProjectTest\\Yeni klas\u00F6r\\WeatherApp\\WeatherApp\\Models\\ResponseModel\\WeeklyResponseModel.cs",
-              "RelativeDocumentMoniker": "WeatherApp\\Models\\ResponseModel\\WeeklyResponseModel.cs",
-              "ToolTip": "D:\\FirstProjectTest\\Yeni klas\u00F6r\\WeatherApp\\WeatherApp\\Models\\ResponseModel\\WeeklyResponseModel.cs",
-              "RelativeToolTip": "WeatherApp\\Models\\ResponseModel\\WeeklyResponseModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T14:02:38.608Z"
             }
           ]
         }

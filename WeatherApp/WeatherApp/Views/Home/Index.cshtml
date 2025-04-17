@@ -15,7 +15,7 @@
 			Şehir: <span id="city"></span>
 		</div>
 		<div class="temperature">
-			Sıcaklık: <span id="temperature"></span>
+            Sıcaklık: <span id="temperature"> °C</span>
 		</div>
 		<div class="description">
 			Açıklama: <span id="description"></span>
@@ -25,9 +25,14 @@
 			Enlem: <span id="lat"></span>, Boylam: <span id="lon"></span>
 		</div>
 
-		<button id="WeekBtn">Haftalık Tahmin</button>
-
+        <p></p>
+		<button id="WeekBtn" style="text-align:center">Haftalık Tahminlere bakmak için tıklayın</button>
+        <p></p>
+		<button  id="DetailBtn" style="text-align:center">Detaylı Hava Durumu Bilgileri için tıklayın.</button>
+        <p></p>
 	</div>
+
+
 	<script>
 		document.getElementById("getWeatherBtn").addEventListener("click", function() {
 			let city = document.getElementById("cityInput").value;
@@ -53,6 +58,10 @@
 				window.location.href = `/Home/WeeklyForecast?city=${city}`;
 			}
 		});
+
+        document.getElementById("DetailBtn").addEventListener('click', function() {
+            window.location.href = '/Home/Details';
+        });
 	</script>
 </div>
 <div class="popular-cities">

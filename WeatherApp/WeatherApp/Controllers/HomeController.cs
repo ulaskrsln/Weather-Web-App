@@ -17,7 +17,11 @@ namespace WeatherApp.Controllers
             return View();
         }
 
-        public IActionResult WeeklyForecast()
+        public IActionResult WeeklyForecast(string city)
+        {
+            return View("~/Views/Home/WeeklyForecast.cshtml", city);
+        }
+        public IActionResult Details()
         {
             return View();
         }

@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Hava Durumu Sorgulama";
 }
-
+@model string
 <div id="content">
     <h1>Hava Durumu Uygulaması</h1>
     <p>Anlık hava durumu bilgisini almak için lütfen bir şehir adı girin:</p>
@@ -32,8 +32,12 @@
 
 </div>
 
+<div class="header" style="margin-top: 30 px">
+	<h2 style="margin-top: 20px;">5 Günlük Hava Tahmini</h2>
+	<p style="margin-bottom: 10px;">Tahmin bilgileri aşağıda listelenmiştir:</p>
+</div>
+
 <div class="forecast-container" style="margin-top: 30px;">
-    <h2>5 Günlük Tahmin : <br></h2>
     <div class="weather-card">
         <h3 class="day-name">Gün 1</h3>
         <p class="date"></p>
@@ -86,27 +90,27 @@
 </div>
 
 <script>
-    const apiKey = "7492afa40ac6decc24d9235f3313fcbf"; 
+    const apiKey = "7492afa40ac6decc24d9235f3313fcbf";
 
-    const cityInput = document.getElementById("cityInput");
-    const forecastBtn = document.getElementById("WeeklyForecastBtn");
+    const cityInput = document.getElementById("cityInput"); // Input alanı
+    const forecastBtn = document.getElementById("WeeklyForecastBtn"); // Buton
     const currentCityEl = document.getElementById("city");
     const currentTempEl = document.getElementById("temperature");
     const currentDescEl = document.getElementById("description");
     const currentLatEl = document.getElementById("lat");
     const currentLonEl = document.getElementById("lon");
+
     const weatherCards = document.querySelectorAll('.forecast-container .weather-card');
 
+ 
     function clearForecastCards() {
         weatherCards.forEach((card, index) => {
-            card.style.display = ''; 
-            card.querySelector('.day-name').textContent = `Gün ${index + 1}`; 
+            card.style.display = '';
+            card.querySelector('.day-name').textContent = `Gün ${index + 1}`;
             card.querySelector('.date').textContent = "";
             const iconEl = card.querySelector('.weather-icon');
             if (iconEl) {
-                iconEl.src = "";
-                iconEl.alt = "hava durumu ikonu";
-                iconEl.style.display = 'none'; 
+                iconEl.src = ""; iconEl.alt = "hava durumu ikonu"; iconEl.style.display = 'none';
             }
             card.querySelector('.temp-high').textContent = "";
             card.querySelector('.temp-low').textContent = "";
@@ -114,55 +118,52 @@
         });
     }
 
-    
+     // Anlık hava durumu alanlarını temizler/sıfırlar (YENİ EKLENENLER DAHİL)
+     function clearCurrentWeatherDisplay() {
+         currentCityEl.innerText = "-";
+         currentTempEl.innerText = "-";
+         currentDescEl.innerText = "Lütfen bir şehir girin.";
+         currentLatEl.innerText = "-";
+         currentLonEl.innerText = "-";
+        
+     }
+
     function processForecastDataSimple(forecastList) {
         const dailySummaries = [];
         const processedDates = new Set();
-
         for (const item of forecastList) {
             const dateStr = item.dt_txt.split(' ')[0];
-
-            
             if (!processedDates.has(dateStr) && dailySummaries.length < 5) {
                 processedDates.add(dateStr);
                 const daySummary = {
-                    date: dateStr,
-                    dt: item.dt,
-                    temp_min: item.main.temp_min,
-                    temp_max: item.main.temp_max,
-                    description: item.weather[0].description,
+                    date: dateStr, dt: item.dt, temp_min: item.main.temp_min,
+                    temp_max: item.main.temp_max, description: item.weather[0].description,
                     icon: item.weather[0].icon
                 };
                 dailySummaries.push(daySummary);
             }
-            if (dailySummaries.length >= 5) break; 
+            if (dailySummaries.length >= 5) break;
         }
         return dailySummaries;
     }
 
-
     function displayFiveDayForecast(processedDailyData) {
         processedDailyData.forEach((dayData, index) => {
             if (index >= weatherCards.length) return;
-
-            const card = weatherCards[index]; 
+            const card = weatherCards[index];
             const dateObj = new Date(dayData.dt * 1000);
             const dayName = dateObj.toLocaleDateString('tr-TR', { weekday: 'long' });
-            const dateString = dateObj.toLocaleDateString('tr-TR', { day: 'numeric', month: 'short' });
-
+            const dateString = dateObj.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long' }); 
             const tempHigh = Math.round(dayData.temp_max);
             const tempLow = Math.round(dayData.temp_min);
             const description = dayData.description;
             const iconCode = dayData.icon;
             const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@@2x.png`; 
-
             card.querySelector('.day-name').textContent = dayName;
             card.querySelector('.date').textContent = dateString;
             const iconEl = card.querySelector('.weather-icon');
-             if (iconEl) {
-                iconEl.src = iconUrl;
-                iconEl.alt = description;
-                iconEl.style.display = 'block';
+            if (iconEl) {
+                iconEl.src = iconUrl; iconEl.alt = description; iconEl.style.display = 'block';
             }
             card.querySelector('.temp-high').textContent = `${tempHigh}°C`;
             card.querySelector('.temp-low').textContent = `${tempLow}°C`;
@@ -170,26 +171,26 @@
         });
     }
 
-    forecastBtn.addEventListener("click", function () {
-        const city = cityInput.value.trim();
-        if (!city) {
-            alert("Lütfen bir şehir adı girin.");
+    function formatTime(unixTimestamp) {
+        const date = new Date(unixTimestamp * 1000);
+        return date.toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' });
+    }
+
+    function fetchAndDisplayWeather(cityName) {
+        if (!cityName || cityName.trim() === '') {
+            alert("Geçerli bir şehir adı belirtilmedi.");
+            clearCurrentWeatherDisplay(); 
+            clearForecastCards();         
             return;
         }
 
+        clearCurrentWeatherDisplay();
         clearForecastCards();
-        currentCityEl.innerText = "-";
-        currentTempEl.innerText = "-";
-        currentDescEl.innerText = "Yükleniyor...";
-        currentLatEl.innerText = "-";
-        currentLonEl.innerText = "-";
 
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=tr`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric&lang=tr`)
             .then(response => {
                 if (!response.ok) {
-                    return response.json().then(errData => {
-                         throw new Error(errData.message || `Şehir bulunamadı veya API hatası (Kod: ${response.status})`);
-                    });
+                    return response.json().then(errData => { throw new Error(errData.message || `Şehir bulunamadı veya API hatası (Kod: ${response.status})`); });
                 }
                 return response.json();
             })
@@ -199,34 +200,51 @@
                 currentDescEl.innerText = currentData.weather[0].description;
                 currentLatEl.innerText = currentData.coord.lat.toFixed(4);
                 currentLonEl.innerText = currentData.coord.lon.toFixed(4);
-
                 
-                return fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric&lang=tr`);
+                return fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=metric&lang=tr`);
             })
             .then(forecastResponse => {
                 if (!forecastResponse.ok) {
-                    return forecastResponse.json().then(errData => {
-                         throw new Error(errData.message || `5 Günlük tahmin API hatası (Kod: ${forecastResponse.status})`);
-                    });
+                    return forecastResponse.json().then(errData => { throw new Error(errData.message || `5 Günlük tahmin API hatası (Kod: ${forecastResponse.status})`); });
                 }
                 return forecastResponse.json();
             })
             .then(forecastData => {
-                
                 if (forecastData.list && forecastData.list.length > 0) {
                     const dailySummaries = processForecastDataSimple(forecastData.list);
                     displayFiveDayForecast(dailySummaries);
                  } else {
-                    throw new Error("API yanıtında beklenen tahmin listesi verisi bulunamadı.");
+                    
+                    console.warn("API yanıtında tahmin listesi verisi bulunamadı.");
                  }
             })
             .catch(error => {
                 console.error('Hata:', error);
                 alert(`Bir hata oluştu: ${error.message}`);
-                currentDescEl.innerText = "Veri alınamadı.";
+                clearCurrentWeatherDisplay();
                 clearForecastCards();
+                currentDescEl.innerText = "Veri alınamadı."; // Hata mesajı
             });
+    }
 
-    }); 
+    document.addEventListener('DOMContentLoaded', function() {
+        const initialCity = '@Model'; 
+        
+        if (initialCity && initialCity !== '' && initialCity.trim() !== '') {
+            fetchAndDisplayWeather(initialCity);
+        } else {
+             clearCurrentWeatherDisplay();
+             clearForecastCards();
+        }
+    });
+
+    forecastBtn.addEventListener("click", function () {
+        const cityFromInput = cityInput.value.trim();
+        if (cityFromInput) {
+             fetchAndDisplayWeather(cityFromInput); 
+        } else {
+            alert("Lütfen bir şehir adı girin."); 
+        }
+    });
 
 </script>
