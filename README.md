@@ -37,7 +37,7 @@ Bu uygulama, hava durumu verilerini [OpenWeatherMap API](https://openweathermap.
 
 ## Katkı
 
-Eğer bu projeye katkıda bulunmak isterseniz, pull request'leri bekliyoruz! Yeni özellikler veya hata düzeltmeleri eklemek isterseniz, aşağıdaki adımları takip edebilirsiniz.
+Eğer bu projeye katkıda bulunmak isterseniz, yeni özellikler veya hata düzeltmeleri eklemek isterseniz, aşağıdaki adımları takip edebilirsiniz.
 
 1. Bu repository'yi fork'layın.
 2. Yeni bir branch oluşturun.
